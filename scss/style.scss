@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
+body {
+    background-color: gray;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+.main {
+    height: 500px;
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top_wraper {
+    height: 30%;
+    position: relative;
+}
+.time_block {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 65px;
+    user-select: none;
+}
+
+.buttons_wraper {
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    align-items: center;
+}
+.save, .start, .reverse, .reset, .stop{
+    background-color: rgb(197, 200, 208);
+    box-shadow:  0px -2px 10px 3px #00000052;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.start, .stop {
+    width: 110px;
+    height: 110px;
+}
+.save, .reverse {
+    width: 70px;
+    height: 70px;
+    // margin-top: 10px;
+    visibility: hidden;
+}
+.save_area {
+    display: block;
+    margin: 30px auto 0 auto;
+    max-height: 130px;
+    width: 85%;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    overflow-y: scroll;
+    box-shadow: inset  -3px -2px 10px 3px #00000046,
+                        0px -2px 15px 1px #ffffff15;
+    border-radius: 3px;
+    &::-webkit-scrollbar{
+        border: 1px rgba(197, 200, 208, 0.5) solid;
+        box-shadow: inset  0px 1px 2px 0px #00000046;
+        border-radius: 8px;
+        width: 8px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: rgba(197, 200, 208, 0.7);
+        box-shadow:  -2px -2px 10px 1px #00000046;
+        border-radius: 8px;
+        width: 3px;
+    }
+}
+
+
+.reset_wrap {
+    position: absolute;
+    width: 100%;
+    // margin-top: 20px;
+    bottom: 0;
+}
+.reset {
+    background-color: rgb(197, 200, 208);
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    font-weight: 600;
+    font-size: 11px;
+    visibility: hidden;
+}
