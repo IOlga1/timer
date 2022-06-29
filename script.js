@@ -10,27 +10,22 @@ const saveArea = document.querySelector('.save_area');
 
 // Определяем начальное значение чисел (/ выведение из Local Storage) и их публикация
 localStorage.getItem('ms') == null ? ms = 0 : ms = localStorage.getItem('ms');
-function msText() {
-    ms < 10 ? document.querySelector('.ms').textContent = '0' + ms : document.querySelector('.ms').textContent = ms;
-}
+const msText = () => ms < 10 ? document.querySelector('.ms').textContent = '0' + ms : document.querySelector('.ms').textContent = ms;
 msText();
 
 localStorage.getItem('sec') == null ? sec = 0 : sec = localStorage.getItem('sec');
-function secText() {
-    sec < 10 ? document.querySelector('.sec').textContent = '0' + sec : document.querySelector('.sec').textContent = sec;
-}
+
+const secText = () => sec < 10 ? document.querySelector('.sec').textContent = '0' + sec : document.querySelector('.sec').textContent = sec;
 secText();
 
 localStorage.getItem('min') == null ? min = 0 : min = localStorage.getItem('min');
-function minText() {
-    min < 10 ? document.querySelector('.min').textContent = '0' + min : document.querySelector('.min').textContent = min;
-}
+
+const minText = () => min < 10 ? document.querySelector('.min').textContent = '0' + min : document.querySelector('.min').textContent = min;
 minText();
 
 localStorage.getItem('hour') == null ? hour = 0 : hour = localStorage.getItem('hour');
-function hourText() {
-    hour < 10 ? document.querySelector('.hour').textContent = '0' + hour : document.querySelector('.hour').textContent = hour;
-}
+
+const hourText = () => hour < 10 ? document.querySelector('.hour').textContent = '0' + hour : document.querySelector('.hour').textContent = hour;
 hourText();
 
 // Есть ли поле сохранений в памяти?
@@ -153,7 +148,7 @@ function forvardGo() {
             if (sec > 59) {
                 sec = 0;
                 secText();
-                min--;
+                min++;
                 minText();
                 if (min > 59) {
                     min = 0;
